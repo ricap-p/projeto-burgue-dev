@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #6a329f;
+    color: #000000;
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    min-height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* MENU */
+header ul {
+    position: absolute;
+    top: 45px;
+    right: 40px;
+    z-index: 3;
+
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+header ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+header ul li a:hover {
+    color: #cbb2df;
+}
+
+/* BANNER + BOTÕES */
+.search-container {
+    width: 100%;
+    height: 600px;
+    position: relative;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 14px;
+    flex-wrap: wrap;
+
+    padding: 120px 40px 0;
+}
+
+/* Imagem como fundo */
+.search-container img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    z-index: 0;
+}
+
+/* Camada escura */
+.search-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+}
+
+/* Botões acima da imagem */
+#filter,
+#Map,
+#forEach,
+#reduce {
+    position: relative;
+    z-index: 2;
+}
+
+.search-container button {
+    padding: 14px 22px;
+    border: none;
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.88);
+    color: #4b1c72;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.search-container button:hover {
+    background: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* PRODUTOS */
+main {
+    padding: 50px 40px;
+}
+
+.products-container ul {
+    list-style: none;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.products-container li {
+    list-style: none;
+    background: #ffffff;
+
+    padding: 20px;
+    border-radius: 18px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.products-container li:hover {
+    transform: translateY(-6px);
+}
+
+.products-container li img {
+    width: 100%;
+    height: 210px;
+    object-fit: contain;
+    margin-bottom: 16px;
+}
+
+.products-container h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #5d3685;
+}
+
+.products-container p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.products-container p:last-child {
+    font-size: 20px;
+    font-weight: bold;
+    color: #6a329f;
+}
+
+/* SOBRE */
+#about {
+    max-width: 900px;
+    margin: 0 auto;
+
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 18px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+}
+
+#about h2 {
+    font-size: 30px;
+    margin-bottom: 16px;
+    color: #5d3685;
+}
+
+#about p {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* FOOTER */
+footer {
+    background: #4b1c72;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+footer address {
+    font-style: normal;
+    margin-bottom: 16px;
+}
+
+footer p {
+    margin-bottom: 8px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    header {
+        min-height: 520px;
+    }
+
+    header ul {
+        top: 35px;
+        left: 20px;
+        right: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .search-container {
+        height: 520px;
+        padding: 120px 25px 0;
+        justify-content: center;
+    }
+
+    .products-container ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        min-height: 650px;
+    }
+
+    header ul {
+        top: 25px;
+        gap: 14px;
+        font-size: 14px;
+    }
+
+    .search-container {
+        height: 650px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 120px 20px 0;
+    }
+
+    .search-container button {
+        width: 100%;
+        max-width: 330px;
+    }
+
+    main {
+        padding: 35px 20px;
+    }
+
+    .products-container ul {
+        grid-template-columns: 1fr;
+    }
+}
